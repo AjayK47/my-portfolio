@@ -137,8 +137,8 @@ export default function Portfolio() {
           </div>
           <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text"
           style={{ lineHeight: '1.4', paddingTop: '0.5rem' }}>
-         Hello, I'm Ajay Kommineni
-         </h2>
+          Hello, I am Ajay Kommineni
+          </h2>
           <p className="max-w-2xl mx-auto text-xl leading-relaxed text-gray-400">
             Gen AI Developer and an Enthusiast
           </p>
