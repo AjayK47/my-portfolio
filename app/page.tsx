@@ -4,8 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Github, Download, ExternalLink, Linkedin, Twitter, Mail,GraduationCap } from "lucide-react";
 
 export default function Portfolio() {
