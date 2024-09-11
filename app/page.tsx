@@ -128,7 +128,7 @@ return (
               className="rounded-full object-cover border-4 border-purple-400"
             />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text"
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text md:bg-clip-padding md:bg-gradient-to-r md:from-purple-600 md:to-blue-600"
           style={{ lineHeight: '1.4', paddingTop: '0.5rem' }}>
           Hello, I am Ajay Kommineni
           </h2>
