@@ -12,15 +12,14 @@ export default function Portfolio() {
   const [index, setIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    if (index < fullText.length) {
-      setTimeout(() => {
-        setText(text + fullText[index])
-        setIndex(index + 1)
-      }, 150)
-    }
-  }, [index, text])
-
+useEffect(() => {
+  if (index < fullText.length) {
+    setTimeout(() => {
+      setText((prevText) => prevText + fullText[index]);
+      setIndex(index + 1);
+    }, 150);
+  }
+}, [index, fullText]);
 
   const projects = [
     {
