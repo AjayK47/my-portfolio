@@ -4,12 +4,13 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github, Download, ExternalLink, Linkedin,Mail,GraduationCap } from "lucide-react";
+import { Github, Download, ExternalLink, Linkedin, Mail, GraduationCap, Menu } from "lucide-react";
 
 export default function Portfolio() {
   const [text, setText] = useState('');
   const fullText = "Ajay Kommineni";
   const [index, setIndex] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (index < fullText.length) {
@@ -107,26 +108,31 @@ export default function Portfolio() {
     },
   ]
 
-  return (
-<div className="min-h-screen bg-gray-900 text-gray-300 font-sans">
-  <header className="sticky top-0 bg-gray-800 bg-opacity-90 backdrop-blur p-4 z-10">
-    <nav className="container mx-auto flex justify-between items-center">
-      <h1 className="text-3xl font-bold font-sans text-purple-400 tracking-wide">
-        {text}
-      </h1>
-      <div className="space-x-6 text-lg font-medium">
-        <a href="#about" className="text-purple-400 hover:text-purple-300 transition-colors duration-200">About</a>
-        <a href="#projects" className="text-purple-400 hover:text-purple-300 transition-colors duration-200">Projects</a>
-        <a href="#certifications" className="text-purple-400 hover:text-purple-300 transition-colors duration-200">Certifications</a>
-        <a href="#publications" className="text-purple-400 hover:text-purple-300 transition-colors duration-200">Publications</a>
-        <a href="#connect" className="text-purple-400 hover:text-purple-300 transition-colors duration-200">Connect</a>
-      </div>
-    </nav>
-  </header>
+return (
+    <div className="min-h-screen bg-gray-900 text-gray-300 font-sans">
+      <header className="sticky top-0 bg-gray-800 bg-opacity-90 backdrop-blur p-4 z-10">
+        <nav className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl md:text-3xl font-bold font-sans text-purple-400 tracking-wide">
+            {text}
+          </h1>
+          <div className="md:hidden">
+            <Button variant="ghost" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <Menu className="h-6 w-6 text-purple-400" />
+            </Button>
+          </div>
+          <div className={`${isMenuOpen ? 'block' : 'hidden'} md:block absolute md:relative top-full left-0 w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0 space-y-4 md:space-y-0 md:space-x-6 text-lg font-medium`}>
+            <a href="#about" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">About</a>
+            <a href="#projects" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">Projects</a>
+            <a href="#certifications" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">Certifications</a>
+            <a href="#publications" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">Publications</a>
+            <a href="#connect" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">Connect</a>
+          </div>
+        </nav>
+      </header>
 
-      <main className="container mx-auto px-4 py-16 space-y-32">
+      <main className="container mx-auto px-4 py-8 md:py-16 space-y-16 md:space-y-32">
         <section id="about" className="space-y-8 text-center">
-          <div className="w-60 h-60 mx-auto mb-8 relative">
+          <div className="w-40 h-40 md:w-60 md:h-60 mx-auto mb-8 relative">
             <Image
               src="/images/fulls/dp.jpg"
               alt="Ajay Kommineni"
@@ -135,69 +141,67 @@ export default function Portfolio() {
               className="rounded-full object-cover border-4 border-purple-400"
             />
           </div>
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text"
-          style={{ lineHeight: '1.4', paddingTop: '0.5rem' }}>
-          Hello, I am Ajay Kommineni
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text"
+            style={{ lineHeight: '1.4', paddingTop: '0.5rem' }}>
+            Hello, I am Ajay Kommineni
           </h2>
-          <p className="max-w-2xl mx-auto text-xl leading-relaxed text-gray-400">
+          <p className="max-w-2xl mx-auto text-lg md:text-xl leading-relaxed text-gray-400">
             Gen AI Developer and an Enthusiast
           </p>
-          <div className="bg-gray-800 p-6 rounded-lg max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4 text-purple-400">About Me</h3>
-            <p className="text-lg text-gray-300">
-            I am a dedicated final-year student majoring in Computer Science and Engineering at Vellore Institute of Technology, AP. I am deeply immersed in the world of Deep Learning and enthusiastic about staying updated on the latest AI trends. Currently, I am focused on building large language models (LLMs). Beyond academics, I am fascinated by space and planes and am determined to be part of the exciting progress in technology.
+          <div className="bg-gray-800 p-4 md:p-6 rounded-lg max-w-2xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-purple-400">About Me</h3>
+            <p className="text-base md:text-lg text-gray-300">
+              I am a dedicated final-year student majoring in Computer Science and Engineering at Vellore Institute of Technology, AP. I am deeply immersed in the world of Deep Learning and enthusiastic about staying updated on the latest AI trends. Currently, I am focused on building large language models (LLMs). Beyond academics, I am fascinated by space and planes and am determined to be part of the exciting progress in technology.
             </p>
           </div>
-          <div className="space-x-4">
-  {/* Resume Button */}
-  <a href="https://drive.google.com/file/d/1DrBZPBHG8eZjlRpxOha0EI2CuQYfY9dh/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-  <Button 
-      variant="outline" 
-      className="py-3 px-6 text-lg border-purple-600 bg-purple-600 text-white hover:bg-purple-100 hover:text-purple-600 transition-colors"
-    >
-      <Download className="mr-2 h-5 w-5" /> Download Resume
-    </Button>
-  </a>
-
-  {/* GitHub Profile Button */}
-  <a href="https://github.com/AjayK47" target="_blank" rel="noopener noreferrer">
-    <Button 
-      variant="outline" 
-      className="py-3 px-6 text-lg border-blue-600 bg-blue-600 text-white hover:bg-blue-100 hover:text-blue-600 transition-colors"
-
-    >
-      <Github className="mr-2 h-5 w-5" /> GitHub Profile
-    </Button>
-  </a>
-</div>
-
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
+            <a href="https://drive.google.com/file/d/1DrBZPBHG8eZjlRpxOha0EI2CuQYfY9dh/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
+              <Button 
+                variant="outline" 
+                className="w-full md:w-auto py-3 px-6 text-lg border-purple-600 bg-purple-600 text-white hover:bg-purple-100 hover:text-purple-600 transition-colors"
+              >
+                <Download className="mr-2 h-5 w-5" /> Download Resume
+              </Button>
+            </a>
+            <a href="https://github.com/AjayK47" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
+              <Button 
+                variant="outline" 
+                className="w-full md:w-auto py-3 px-6 text-lg border-blue-600 bg-blue-600 text-white hover:bg-blue-100 hover:text-blue-600 transition-colors"
+              >
+                <Github className="mr-2 h-5 w-5" /> GitHub Profile
+              </Button>
+            </a>
+          </div>
         </section>
+
+        {/* Education section */}
         <section id="education" className="space-y-8">
-          <h2 className="text-4xl font-bold text-center mb-8 text-purple-400">Education</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Education</h2>
           <Card className="bg-gray-800 border-gray-700 hover:border-purple-400 transition-colors">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-blue-400">VIT AP University</CardTitle>
+              <CardTitle className="text-xl md:text-2xl font-bold text-blue-400">VIT AP University</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <p className="text-lg text-gray-300"><GraduationCap className="inline-block mr-2" /> BTech in Computer Science and Engineering</p>
-              <p className="text-lg text-gray-300">Specialization in AI and ML</p>
-              <p className="text-lg text-gray-400">Years of Study: 2021 - 2025</p>
-              <p className="text-lg text-gray-400">CGPA: 8.73/10</p>
+              <p className="text-base md:text-lg text-gray-300"><GraduationCap className="inline-block mr-2" /> BTech in Computer Science and Engineering</p>
+              <p className="text-base md:text-lg text-gray-300">Specialization in AI and ML</p>
+              <p className="text-base md:text-lg text-gray-400">Years of Study: 2021 - 2025</p>
+              <p className="text-base md:text-lg text-gray-400">CGPA: 8.73/10</p>
             </CardContent>
           </Card>
         </section>
         
+        {/* Projects section */}
         <section id="projects" className="space-y-8">
-          <h2 className="text-4xl font-bold text-center mb-8 text-purple-400">Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <Card key={index} className="bg-gray-800 border-gray-700 hover:border-purple-400 transition-colors flex flex-col">
                 <CardHeader className="p-4">
-                  <Image src={project.image} alt={project.title} className="w-full h-40 object-cover rounded-t-lg" />
+                  <Image src={project.image} alt={project.title} width={400} height={200} className="w-full h-40 object-cover rounded-t-lg" />
                 </CardHeader>
                 <CardContent className="p-4 flex-grow">
-                  <CardTitle className="text-xl font-bold mb-2 text-blue-400">{project.title}</CardTitle>
-                  <CardDescription className="text-gray-400">{project.description}</CardDescription>
+                  <CardTitle className="text-lg md:text-xl font-bold mb-2 text-blue-400">{project.title}</CardTitle>
+                  <CardDescription className="text-sm md:text-base text-gray-400">{project.description}</CardDescription>
                 </CardContent>
                 <CardFooter className="p-4">
                   <Button variant="outline" asChild className="w-full border-purple-600 bg-purple-600 text-white hover:bg-purple-100 hover:text-purple-600 transition-colors">
@@ -211,19 +215,17 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Certifications section */}
         <section id="certifications" className="space-y-8">
-          <h2 className="text-4xl font-bold text-center mb-8 text-purple-400">Certifications</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Certifications</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {certifications.map((cert, index) => (
               <Card key={index} className="bg-gray-800 border-gray-700 hover:border-blue-400 transition-colors">
                 <CardHeader>
-                  <CardTitle className="text-xl font-bold text-blue-400">{cert.name}</CardTitle>
+                  <CardTitle className="text-lg md:text-xl font-bold text-blue-400">{cert.name}</CardTitle>
                 </CardHeader>
-                {/* <CardContent>
-                  <CardDescription className="text-gray-400">{cert.description}</CardDescription>
-                </CardContent> */}
                 <CardFooter>
-                  <Button variant="outline" asChild className="w-full border-blue-600 bg-blue-600 text-white hover:bg-blue-100 hover:text-blue-600 transition-colors"   >
+                  <Button variant="outline" asChild className="w-full border-blue-600 bg-blue-600 text-white hover:bg-blue-100 hover:text-blue-600 transition-colors">
                     <a href={cert.link} target="_blank" rel="noopener noreferrer">
                       View Certificate <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
@@ -234,57 +236,52 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Publications section */}
         <section id="publications" className="space-y-8">
-  <h2 className="text-4xl font-bold text-center mb-8 text-purple-400">Publications</h2>
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    {publications.map((pub, index) => (
-      <Card key={index} className="bg-gray-900 border-gray-800 hover:border-purple-400 transition-colors">
-        <CardHeader>
-          <CardTitle className="text-xl font-bold text-blue-400">{pub.title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <CardDescription className="text-gray-400">{pub.description}</CardDescription>
-        </CardContent>
-        <CardFooter>
-          <Button variant="outline" asChild className="w-full border-purple-600 bg-purple-600 text-white hover:bg-purple-100 hover:text-purple-600 transition-colors">
-            <a href={pub.link} target="_blank" rel="noopener noreferrer">
-              Read Publication <ExternalLink className="ml-2 h-4 w-4" />
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Publications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {publications.map((pub, index) => (
+              <Card key={index} className="bg-gray-900 border-gray-800 hover:border-purple-400 transition-colors">
+                <CardHeader>
+                  <CardTitle className="text-lg md:text-xl font-bold text-blue-400">{pub.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm md:text-base text-gray-400">{pub.description}</CardDescription>
+                </CardContent>
+                <CardFooter>
+                  <Button variant="outline" asChild className="w-full border-purple-600 bg-purple-600 text-white hover:bg-purple-100 hover:text-purple-600 transition-colors">
+                    <a href={pub.link} target="_blank" rel="noopener noreferrer">
+                      Read Publication <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Connect section */}
+        <section id="connect" className="space-y-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Connect with Me</h2>
+          <div className="flex flex-col md:flex-row justify-center gap-4">
+            <a href="https://www.linkedin.com/in/ajay-kommineni-1b3985224/" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
+              <Button variant="outline" className="w-full md:w-auto py-3 px-6 text-lg border-blue-600 bg-blue-600 text-white hover:bg-blue-100 hover:text-blue-600 transition-colors">
+                <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
+              </Button>
             </a>
-          </Button>
-        </CardFooter>
-      </Card>
-    ))}
-  </div>
-  </section>
-<section id="connect" className="space-y-8">
-  <h2 className="text-4xl font-bold text-center mb-8 text-purple-400">Connect with Me</h2>
-  <div className="flex flex-wrap justify-center gap-4">
-    
-    {/* LinkedIn Button */}
-    <a href="https://www.linkedin.com/in/ajay-kommineni-1b3985224/" target="_blank" rel="noopener noreferrer">
-      <Button variant="outline" className="py-3 px-6 text-lg border-blue-600 bg-blue-600 text-black hover:bg-blue-600 hover:text-black-600 transition-colors">
-        <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
-      </Button>
-    </a>
-
-    {/* GitHub Button */}
-    <a href="https://github.com/AjayK47" target="_blank" rel="noopener noreferrer">
-      <Button variant="outline" className="py-3 px-6 text-lg border-black-600 bg-black-600 text-white hover:bg-black-100 hover:text-black-600 transition-colors">
-        <Github className="mr-2 h-5 w-5" /> GitHub
-      </Button>
-    </a>
-
-    {/* Email Button */}
-    <a href="mailto:ajaykommineni@yahoo.com" target="_blank" rel="noopener noreferrer">
-      <Button variant="outline" className="py-3 px-6 text-lg border-purple-600 bg-purple-600 text-black hover:bg-purple-600 hover:text-black-600 transition-colors">
-        <Mail className="mr-2 h-5 w-5" /> Email
-      </Button>
-    </a>
-
-  </div>
-</section>
+            <a href="https://github.com/AjayK47" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
+              <Button variant="outline" className="w-full md:w-auto py-3 px-6 text-lg border-gray-600 bg-gray-600 text-white hover:bg-gray-100 hover:text-gray-600 transition-colors">
+                <Github className="mr-2 h-5 w-5" /> GitHub
+              </Button>
+            </a>
+            <a href="mailto:ajaykommineni@yahoo.com" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
+              <Button variant="outline" className="w-full md:w-auto py-3 px-6 text-lg border-purple-600 bg-purple-600 text-white hover:bg-purple-100 hover:text-purple-600 transition-colors">
+                <Mail className="mr-2 h-5 w-5" /> Email
+              </Button>
+            </a>
+          </div>
+        </section>
       </main>
-
 
       <footer className="bg-gray-900 p-4 mt-16">
         <div className="container mx-auto text-center text-gray-500">
