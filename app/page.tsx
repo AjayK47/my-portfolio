@@ -9,15 +9,6 @@ import { Github, Download, ExternalLink, Linkedin, Mail, GraduationCap, Menu } f
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-useEffect(() => {
-  if (index < fullText.length) {
-    setTimeout(() => {
-      setText((prevText) => prevText + fullText[index]);
-      setIndex(index + 1);
-    }, 150);
-  }
-}, [index, fullText]);
-
   const projects = [
     {
       title: "AI Voice Over and Script Generator for Youtube",
@@ -108,9 +99,9 @@ return (
     <div className="min-h-screen bg-gray-900 text-gray-300 font-sans">
       <header className="sticky top-0 bg-gray-800 bg-opacity-90 backdrop-blur p-4 z-10">
         <nav className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl md:text-3xl font-bold font-sans text-purple-400 tracking-wide">
-            {text}
-          </h1>
+<h1 className="text-2xl md:text-3xl font-bold font-sans text-purple-400 tracking-wide">
+  Ajay Kommineni
+</h1>
           <div className="md:hidden">
             <Button variant="ghost" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <Menu className="h-6 w-6 text-purple-400" />
