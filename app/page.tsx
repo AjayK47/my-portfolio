@@ -7,9 +7,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Github, Download, ExternalLink, Linkedin, Mail, GraduationCap, Menu } from "lucide-react";
 
 export default function Portfolio() {
-  const [text, setText] = useState('');
-  const fullText = "Ajay Kommineni";
-  const [index, setIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 useEffect(() => {
