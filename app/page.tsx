@@ -14,13 +14,13 @@ export default function Portfolio() {
 
   useEffect(() => {
     if (index < fullText.length) {
-      const timer = setTimeout(() => {
-        setText(text + fullText[index]);
-        setIndex(index + 1);
-      }, 150);
-      return () => clearTimeout(timer);
+      setTimeout(() => {
+        setText(text + fullText[index])
+        setIndex(index + 1)
+      }, 150)
     }
-  }, [index, text]);
+  }, [index, text])
+
 
   const projects = [
     {
@@ -41,21 +41,61 @@ export default function Portfolio() {
       image: "/images/fulls/webchatbot.png",
       link: "https://github.com/AjayK47/Web-ChatBot-using-Llama-index"
     },
-    // Add the rest of your projects here...
-  ];
+    {
+      title: "Gemini-File with Llama-Index",
+      description: "Gemini-File is a Streamlit web application that allows users to upload PDF files, index their contents using the Gemini search engine from the Llama-Index library, and query the documents.",
+      image: "/images/fulls/Gemini.jpg",
+      link: "https://github.com/AjayK47/Gemini-File"
+    },
+    {
+      title: "Face Emotion Detection using CNN",
+      description: "This project involves training a Convolutional Neural Network (CNN) for facial expression recognition using the FER2013 dataset. The trained model can predict emotions (Angry, Fear, Happy, Sad, Surprise) from facial images.",
+      image: "/images/fulls/face.jpg",
+      link: "https://github.com/AjayK47/Face-Emotion-Detection_CNN"
+    },
+    {
+      title: "Boston Housing Price Prediction using Regression",
+      description: "Involves predicting the median housing cost in different areas in Boston based on various input features ,with uses a machine learning Regression model trained on the Boston Housing dataset.",
+      image: "/images/fulls/housing.jpg",
+      link: "https://github.com/AjayK47/Boston-Hosuing-Prediction-and-Deployment-"
+    },
+    {
+      title: "Fruits/Veggies classifications using Inception V3 & integrating with Google Palm API",
+      description: "This project utilizes a finely tuned InceptionV3 model to identify vegetables or fruits in uploaded images, providing nutritional information. Integrated with the Google Generative AI API (Palm), it generates intriguing facts about the recognized produce.",
+      image: "/images/fulls/palm.png",
+      link: "https://github.com/AjayK47/image-classification-with-inceptioV3-and-Google-Palm"
+    },
+    {
+      title: "Email Spam Detector using NLTK and ML",
+      description: "This project implements a simple email spam detection system using two machine learning models: Multinomial Naive Bayes (NB) and Support Vector Machine (SVM). It utilizes natural language processing techniques to classify emails as spam or non-spam.",
+      image: "/images/fulls/Email.jpg",
+      link: "https://github.com/AjayK47/EmailSpamDetector-using-NLTK-and-ML"
+    },
+    {
+      title: "Web Scraping using Autoscrapper",
+      description: "Using Autoscrapper to web scrape data from Flipkart.",
+      image: "/images/fulls/web_scrapping.png",
+      link: "https://github.com/AjayK47/Webscrapping"
+    }
+  ]
 
   const certifications = [
     {
-      name: "AI and ML Externship Certificate, Google Developers",
+      name: " AI and ML Externship Certificate, Google Developers",
       link: "https://smartinternz.com/internships/google_developers/185317219bbdc2991a9e6f518affd353"
     },
     {
       name: "LMOPS1x: Introduction to Generative AI, EDX",
       link: "https://courses.edx.org/certificates/82896b3f96514a9babac7ae1117aa20d"
     },
-  ];
+  ]
 
   const publications = [
+    {
+      title: "Multimodal Approach to Emotion Recognition using Deep Learning - (ICIMIA) · Dec 23, 2023",
+      description: "A multimodal deep learning approach integrates facial expression and text features for robust emotion recognition, outperforming traditional and single-modality methods.",
+      link: "https://ieeexplore.ieee.org/document/10426592"
+    },
     {
       title: "Multimodal Approach to Emotion Recognition using Deep Learning - (ICIMIA) · Dec 23, 2023",
       description: "A multimodal deep learning approach integrates facial expression and text features for robust emotion recognition, outperforming traditional and single-modality methods.",
@@ -66,14 +106,14 @@ export default function Portfolio() {
       description: "The paper focuses on the automated detection of rice leaf diseases using deep learning techniques to improve agricultural disease control methods , also explore the different models perfomance in this area",
       link: "https://ieeexplore.ieee.org/document/10498510"
     },
-  ];
+  ]
 
-  return (
+return (
     <div className="min-h-screen bg-gray-900 text-gray-300 font-sans">
       <header className="sticky top-0 bg-gray-800 bg-opacity-90 backdrop-blur p-4 z-10">
         <nav className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl md:text-3xl font-bold font-sans text-purple-400 tracking-wide">
-            {text || 'Ajay Kommineni'}
+            {text}
           </h1>
           <div className="md:hidden">
             <Button variant="ghost" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -134,6 +174,7 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Education section */}
         <section id="education" className="space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Education</h2>
           <Card className="bg-gray-800 border-gray-700 hover:border-purple-400 transition-colors">
@@ -149,6 +190,7 @@ export default function Portfolio() {
           </Card>
         </section>
         
+        {/* Projects section */}
         <section id="projects" className="space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -173,6 +215,7 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Certifications section */}
         <section id="certifications" className="space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Certifications</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -193,6 +236,7 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Publications section */}
         <section id="publications" className="space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Publications</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -216,6 +260,7 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Connect section */}
         <section id="connect" className="space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-400">Connect with Me</h2>
           <div className="flex flex-col md:flex-row justify-center gap-4">
