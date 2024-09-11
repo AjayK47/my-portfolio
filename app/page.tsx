@@ -141,8 +141,8 @@ return (
             />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text"
-            style={{ lineHeight: '1.4', paddingTop: '0.5rem' }}>
-            Hello, I am {text || 'Ajay Kommineni'}
+          style={{ lineHeight: '1.4', paddingTop: '0.5rem' }}>
+          Hello, I am Ajay Kommineni
           </h2>
           <p className="max-w-2xl mx-auto text-lg md:text-xl leading-relaxed text-gray-400">
             Gen AI Developer and an Enthusiast
