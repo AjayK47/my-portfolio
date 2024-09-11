@@ -108,28 +108,8 @@ export default function Portfolio() {
     },
   ]
 
-return (
+ return (
     <div className="min-h-screen bg-gray-900 text-gray-300 font-sans">
-      <header className="sticky top-0 bg-gray-800 bg-opacity-90 backdrop-blur p-4 z-10">
-        <nav className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl md:text-3xl font-bold font-sans text-purple-400 tracking-wide">
-            {text}
-          </h1>
-          <div className="md:hidden">
-            <Button variant="ghost" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              <Menu className="h-6 w-6 text-purple-400" />
-            </Button>
-          </div>
-          <div className={`${isMenuOpen ? 'block' : 'hidden'} md:block absolute md:relative top-full left-0 w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0 space-y-4 md:space-y-0 md:space-x-6 text-lg font-medium`}>
-            <a href="#about" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">About</a>
-            <a href="#projects" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">Projects</a>
-            <a href="#certifications" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">Certifications</a>
-            <a href="#publications" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">Publications</a>
-            <a href="#connect" className="block md:inline-block text-purple-400 hover:text-purple-300 transition-colors duration-200">Connect</a>
-          </div>
-        </nav>
-      </header>
-
       <main className="container mx-auto px-4 py-8 md:py-16 space-y-16 md:space-y-32">
         <section id="about" className="space-y-8 text-center">
           <div className="w-40 h-40 md:w-60 md:h-60 mx-auto mb-8 relative">
@@ -143,7 +123,7 @@ return (
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text"
             style={{ lineHeight: '1.4', paddingTop: '0.5rem' }}>
-            Hello, I am Ajay Kommineni
+            {text || 'Hello, I am Ajay Kommineni'}
           </h2>
           <p className="max-w-2xl mx-auto text-lg md:text-xl leading-relaxed text-gray-400">
             Gen AI Developer and an Enthusiast
