@@ -6,6 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Github, Download, ExternalLink, Linkedin, Mail, GraduationCap, Menu } from "lucide-react";
 
+export const metadata = {
+  title: "Ajay Kommineni",
+  description: "My Portfolio",
+}
+
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
