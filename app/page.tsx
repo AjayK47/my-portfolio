@@ -62,12 +62,12 @@ export default function Portfolio() {
                 title: "PagePod - Multi-Agent Web content Podcast generator",
                 description: "This project uses a multi-agent framework to automatically generate podcasts from website content. It leverages the power of AI to scrape web content, refine it, create a script, and convert it to speech.",
                 link: "https://github.com/AjayK47/PagePod"
-              }
+              },
               {
                 title: "Stock Insight Agentic Framework with Autogen",
                 description: "This is a multi-agent system that uses LLM's to analyze financial data, review market news, and predict company stock performance. Built with the autogen library, it coordinates multiple agents, each assigned a specific role in processing financial information and making predictions",
                 link: "https://github.com/AjayK47/Stock-Insight-Agent"
-              }
+              },
               {
                 title: "AI Voice Over and Script Generator for Youtube",
                 description: "This project is a Streamlit application that uses various LLM models to generate YouTube scripts and voiceovers. It aims to assist content creators in producing high-quality YouTube videos with minimal effort.",
