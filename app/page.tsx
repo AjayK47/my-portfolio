@@ -9,7 +9,7 @@ export default function Portfolio() {
           <img
             src="/images/fulls/dp.jpg"
             alt="Ajay Kommineni"
-            className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+            className="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
           />
           <h1 className="text-4xl font-bold mb-2">Ajay Kommineni</h1>
           <p className="text-xl text-gray-400 mb-4">Gen AI Developer and Enthusiast</p>
