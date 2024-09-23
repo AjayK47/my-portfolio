@@ -59,23 +59,33 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
+                title: "PagePod - Multi-Agent Web content Podcast generator",
+                description: "This project uses a multi-agent framework to automatically generate podcasts from website content. It leverages the power of AI to scrape web content, refine it, create a script, and convert it to speech.",
+                link: "https://github.com/AjayK47/PagePod"
+              }
+              {
+                title: "Stock Insight Agentic Framework with Autogen",
+                description: "This is a multi-agent system that uses LLM's to analyze financial data, review market news, and predict company stock performance. Built with the autogen library, it coordinates multiple agents, each assigned a specific role in processing financial information and making predictions",
+                link: "https://github.com/AjayK47/Stock-Insight-Agent"
+              }
+              {
                 title: "AI Voice Over and Script Generator for Youtube",
-                description: "A Streamlit application that leverages various AI models to generate YouTube scripts and voiceovers.",
+                description: "This project is a Streamlit application that uses various LLM models to generate YouTube scripts and voiceovers. It aims to assist content creators in producing high-quality YouTube videos with minimal effort.",
                 link: "https://github.com/AjayK47/AI-Youtube-Voice-Over-and-Script-Generator"
               },
               {
                 title: "Gemma Model Finetuning Using Lora",
-                description: "Code and data for fine-tuning a small language model (SLM) tailored for Indian history.",
+                description: "Finetuned Google's Open source Gemma 2b model on Indian history domain using Lora technique , huggingface transformers library ",
                 link: "https://github.com/AjayK47/Gemma-Model-Finetuning-Using-Lora"
               },
               {
                 title: "Web Page ChatBot using Llama index",
-                description: "A Streamlit web application designed to interactively answer questions based on web page data.",
+                description: "Web Page Q&A Chatbot is a Streamlit web application designed to interactively answer questions based on web page data. The chatbot uses LLMS such as Hugging Face, Gemini or OpenAI to provide accurate and context-aware responses.",
                 link: "https://github.com/AjayK47/Web-ChatBot-using-Llama-index"
               },
               {
                 title: "Gemini-File with Llama-Index",
-                description: "A Streamlit web application for uploading PDF files and querying their contents.",
+                description: "Gemini-File is a Streamlit web application that allows users to upload PDF files, index their contents using the Gemini search engine from the Llama-Index library, and query the documents.",
                 link: "https://github.com/AjayK47/Gemini-File"
               },
               {
@@ -85,24 +95,14 @@ export default function Portfolio() {
               },
               {
                 title: "Boston Housing Price Prediction using Regression",
-                description: "A machine learning project for predicting median housing costs in different areas of Boston.",
+                description: "A machine learning project for predicting median housing costs in different areas of Boston. ",
                 link: "https://github.com/AjayK47/Boston-Hosuing-Prediction-and-Deployment-"
               },
               {
                 title: "Fruits/Veggies classifications using Inception V3 & integrating with Google Palm API",
-                description: "A project that uses a finely tuned InceptionV3 model to identify vegetables or fruits in uploaded images.",
+                description: "A project that uses a fine tuned InceptionV3 model to identify vegetables or fruits in uploaded images also provide nutrition info using Google PaLM API",
                 link: "https://github.com/AjayK47/image-classification-with-inceptioV3-and-Google-Palm"
               },
-              {
-                title: "Email Spam Detector using NLTK and ML",
-                description: "An email spam detection system using two machine learning models: Multinomial Naive Bayes (NB) and Support Vector Machine (SVM).",
-                link: "https://github.com/AjayK47/EmailSpamDetector-using-NLTK-and-ML"
-              },
-              {
-                title: "Web Scraping using Autoscrapper",
-                description: "A project demonstrating web scraping techniques, focusing on scraping data from Flipkart using Autoscrapper.",
-                link: "https://github.com/AjayK47/Webscrapping"
-              }
             ].map((project, index) => (
               <div key={index} className="bg-gray-800 p-4 rounded-lg">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
