@@ -7,7 +7,7 @@ export default function Portfolio() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center mb-12">
           <img
-            src="/placeholder.svg?height=150&width=150"
+            src="/images/fulls/dp.jpg"
             alt="Ajay Kommineni"
             className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
           />
@@ -31,14 +31,6 @@ export default function Portfolio() {
             >
               <FaGithub className="mr-2" />
               GitHub
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1DrBZPBHG8eZjlRpxOha0EI2CuQYfY9dh/view?usp=sharing"
-              className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-flex items-center transition duration-300"
-              download
-            >
-              <FaDownload className="mr-2" />
-              Resume
             </a>
           </div>
         </header>
