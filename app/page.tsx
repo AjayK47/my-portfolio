@@ -102,7 +102,7 @@ export default function Portfolio() {
                 title: "Fruits/Veggies classifications using Inception V3 & integrating with Google Palm API",
                 description: "A project that uses a fine tuned InceptionV3 model to identify vegetables or fruits in uploaded images also provide nutrition info using Google PaLM API",
                 link: "https://github.com/AjayK47/image-classification-with-inceptioV3-and-Google-Palm"
-              },
+              }
             ].map((project, index) => (
               <div key={index} className="bg-gray-800 p-4 rounded-lg">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
