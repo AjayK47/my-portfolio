@@ -35,22 +35,27 @@ export default function Portfolio() {
           </div>
         </header>
 
-        <section className="mb-12">
+        <section className="mb-12 bg-gray-800 p-6 rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">About Me</h2>
-          <p className="text-gray-300">
-            Final-year student majoring in Computer Science and Engineering at Vellore Institute of Technology, AP.
-            Passionate about Deep Learning, AI trends, building large language models (LLMs), space, and planes.
+          <p className="text-gray-300 leading-relaxed">
+            Final-year Computer Science and Engineering student at Vellore Institute of Technology, AP. 
+            Passionate about Deep Learning, AI trends, and building large language models (LLMs). 
+            My interests extend beyond tech into space exploration and aviation.
           </p>
         </section>
 
-        <section className="mb-12">
+        <section className="mb-12 bg-gray-800 p-6 rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">Education</h2>
-          <div>
-            <h3 className="text-xl font-semibold">BTech in Computer Science and Engineering</h3>
-            <p className="text-gray-400">VIT AP University</p>
-            <p className="text-gray-400">Specialization: AI and ML</p>
-            <p className="text-gray-400">2021 - 2025</p>
-            <p className="text-gray-400">CGPA: 8.73/10</p>
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="text-xl font-semibold">BTech in Computer Science and Engineering</h3>
+              <p className="text-gray-400">VIT AP University</p>
+              <p className="text-gray-400">Specialization: AI and ML</p>
+            </div>
+            <div className="text-right">
+              <p className="text-gray-400">2021 - 2025</p>
+              <p className="text-gray-400">CGPA: 8.73/10</p>
+            </div>
           </div>
         </section>
 
@@ -104,12 +109,14 @@ export default function Portfolio() {
                 link: "https://github.com/AjayK47/image-classification-with-inceptioV3-and-Google-Palm"
               }
             ].map((project, index) => (
-              <div key={index} className="bg-gray-800 p-4 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
+              <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-gray-400 mb-4">{project.description}</p>
+                </div>
                 <a
                   href={project.link}
-                  className="text-blue-400 hover:text-blue-300 transition duration-300 flex items-center"
+                  className="text-blue-400 hover:text-blue-300 transition duration-300 flex items-center mt-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -122,43 +129,49 @@ export default function Portfolio() {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">Certifications</h2>
-          <ul className="list-disc list-inside text-gray-300">
-            <li>AI and ML Externship Certificate, Google Developers</li>
-            <li>LMOPS1x: Introduction to Generative AI, EDX</li>
-          </ul>
-        </section>
-
-        <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">Publications</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-xl font-semibold">Multimodal Approach to Emotion Recognition using Deep Learning</h3>
-              <p className="text-gray-400">ICIMIA (International Conference on Intelligent Machines, Innovation and Automation) · Dec 23, 2023</p>
-              <a
-                href="https://ieeexplore.ieee.org/document/10426592"
-                className="text-blue-400 hover:text-blue-300 transition duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Publication
-              </a>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">Paddy Crop Disease Detection using LeNet and MobileNet Models</h3>
-              <p className="text-gray-400">INDIACom 2024</p>
-              <a
-                href="https://ieeexplore.ieee.org/document/10498510"
-                className="text-blue-400 hover:text-blue-300 transition duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Publication
-              </a>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Multimodal Approach to Emotion Recognition using Deep Learning",
+                description: "ICIMIA (International Conference on Intelligent Machines, Innovation and Automation) · Dec 23, 2023",
+                link: "https://ieeexplore.ieee.org/document/10426592"
+              },
+              {
+                title: "Paddy Crop Disease Detection using LeNet and MobileNet Models",
+                description: "INDIACom 2024",
+                link: "https://ieeexplore.ieee.org/document/10498510"
+              }
+            ].map((publication, index) => (
+              <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">{publication.title}</h3>
+                  <p className="text-gray-400 mb-4">{publication.description}</p>
+                </div>
+                <a
+                  href={publication.link}
+                  className="text-blue-400 hover:text-blue-300 transition duration-300 flex items-center mt-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Publication
+                </a>
+              </div>
+            ))}
           </div>
         </section>
 
+        <section className="mb-12 bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">Certifications</h2>
+          <p className="text-gray-300 leading-relaxed">
+            <ul className="list-disc list-inside">
+              <li>AI and ML Externship Certificate, Google Developers</li>
+              <li>LMOPS1x: Introduction to Generative AI, EDX</li>
+            </ul>
+          </p>
+        </section>
+
+        {/* Social Links Section */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">Contact</h2>
           <div className="flex flex-wrap gap-4">
